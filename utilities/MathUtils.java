@@ -24,4 +24,17 @@ public class MathUtils {
         }
         return true;
     }
+
+    // New function: Calculate sum of squares
+    public static int calculateSumOfSquares(int number) {
+        int sum = 0;
+        for (int i = 1; i <= number; i++) {
+            sum += i * i;
+        }
+        return sum;
+    }
+
+    public static boolean isWithinRange(int num, int min, int max) {
+        return num >= min && num <= max;
+    }
 }
