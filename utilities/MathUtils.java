@@ -1,35 +1,27 @@
-package app;
+package utilities;
 
-import mathutils.SquareCalculator;
-import mathutils.CubeCalculator;
-import utilities.MathUtils;
+public class MathUtils {
 
-import java.util.Scanner;
-
-public class MainApp {
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter a positive number: ");
-        int number = scanner.nextInt();
-
-        // Validate input using MathUtils
-        if (!MathUtils.validatePositiveNumber(number)) {
-            System.exit(1);
+    // Function to calculate the integer part of the square root of a number
+    public static int calculateSquareRoot(int number) {
+        int root = 0;
+        while (root * root <= number) {
+            root++;
         }
+        return root - 1;
+    }
 
-        // Display square details using SquareCalculator
-        System.out.println("\nCalculating square details...");
-        SquareCalculator.displaySquareDetails(number);
+    // Function to format the result for output
+    public static String formatResult(String operation, int number, int result) {
+        return "The " + operation + " of " + number + " is: " + result;
+    }
 
-        // Display cube details using CubeCalculator
-        System.out.println("\nCalculating cube details...");
-        CubeCalculator.displayCubeDetails(number);
-
-        // Calculate and display the integer square root
-        System.out.println("\nCalculating square root...");
-        int squareRoot = MathUtils.calculateSquareRoot(number);
-        System.out.println(MathUtils.formatResult("integer square root", number, squareRoot));
+    // Function to validate if a number is positive
+    public static boolean validatePositiveNumber(int number) {
+        if (number < 0) {
+            System.err.println("Error: Number must be positive.");
+            return false;
+        }
+        return true;
     }
 }

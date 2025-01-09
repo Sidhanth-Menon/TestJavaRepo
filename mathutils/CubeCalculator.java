@@ -25,9 +25,4 @@ public class CubeCalculator {
         System.out.println(MathUtils.formatResult("cube", number, cube));
         System.out.println("The sum of cubes from 1 to " + number + " is: " + sumOfCubes);
     }
-
-    // New function: Calculate difference of cubes
-    public static int calculateDifferenceOfCubes(int num1, int num2) {
-        return calculateCube(num1) - calculateCube(num2);
-    }
 }

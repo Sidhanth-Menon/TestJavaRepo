@@ -35,9 +35,4 @@ public class SquareCalculator {
 
 
     }
-
-    //New Function added
-    public static int powerOfNumber(int num, int power) {
-        return (int) Math.pow(num, power);  // Note: Casting to int might truncate for larger results
-    }
 }
